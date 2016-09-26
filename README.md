@@ -55,6 +55,18 @@ task ifconfig(type: com.github.brunodles.cexec.Cexec) {
 }
 ```
 
+### Short task type
+
+If you have multiple tasks extending `Cexec`, you can do as follows.
+
+In your `build.gradle` add the import line, before the first task, it can also be on the of the file.
+Now yu can put only `Cexec` for the task type.
+
+ ```gradle
+import com.github.brunodles.cexec.Cexec
+task ifconfig(type: Cexec) {
+ ```
+
 # Contributing
 
 You can contribute but showing your custom tasks, or submitting a new task.
