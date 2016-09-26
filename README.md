@@ -11,7 +11,7 @@ Try to imagine the following situations:
   I want to use *my pc IP address* as `API_URL` but I don't want to keep looking on my IP address manually.
   So we can use a task to do that for us.
 
-I use the `cexec` task to do those tasks. Keep reading, the `IP Grabber` will have it's own task.
+I use the `cexec` task to do those tasks.
 
 # How to use
 
