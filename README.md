@@ -13,6 +13,48 @@ Try to imagine the following situations:
 
 I use the `cexec` task to do those tasks. Keep reading, the `IP Grabber` will have it's own task.
 
+# How to use
+
+## Add JitPack in your `build.gradle`.
+
+```gradle
+buildscript {
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
+    dependencies {
+        classpath 'com.github.brunodles:cexec:-SNAPSHOT'
+    }
+}
+```
+
+You can add this just before use, in your all level `projectPath/app/build.gradle`.
+Or in your root level `projectPath/build.gradle`. Suggested if you plan to use it in more than one module.
+
+## Create a Task
+
+To Create a new task you just need to edit the code bellow.
+
+```gradle
+task name(type: com.github.brunodles.cexec.Cexec) {
+    description "<say something>" // <- this will appear when you list tasks for your project
+    command "<command>" // <- the terminal command you want to run
+    printCommand <true|false> // <- true if you want to see the command printed before it's execution. Useful if you have some complex command with variables.
+}
+```
+
+### Sample
+
+This code just calls the `ifconfig`, to get information about the network
+
+```gradle
+task ifconfig(type: com.github.brunodles.cexec.Cexec) {
+    description "Just print something on screen"
+    command "ifconfig"
+    printCommand false
+}
+```
+
 # Contributing
 
 You can contribute but showing your custom tasks, or submitting a new task.
