@@ -44,7 +44,7 @@ task name(type: com.github.brunodles.cexec.Cexec) {
 }
 ```
 
-### Sample
+### Samples
 
 This code just calls the `ifconfig`, to get information about the network
 
@@ -53,6 +53,17 @@ task ifconfig(type: com.github.brunodles.cexec.Cexec) {
     description "Just print something on screen"
     command "ifconfig"
     printCommand false
+}
+```
+
+This code calls adb to clean the app data.
+
+```gradle
+android.applicationVariants.all { variant ->
+    task ("cleanAppData${variant.name.capitalize()}", type:com.github.brunodles.cexec.Cexec) {
+        description "Clean app data on device"
+        command "adb shell pm clear ${variant.applicationId}"
+    }
 }
 ```
 
