@@ -7,8 +7,6 @@ It may looks strange if you only know the basic gradle commands.
 
 Try to imagine the following situations:
   * Run something before install the app on android. Like the `development backEnd App`, `mocked Api` or anything like thad.
-  * Grab information from the PC to use on the app. When I'm working with both backEnd and Android App,
-  I want to use *my pc IP address* as `API_URL` but I don't want to keep looking on my IP address manually.
   So we can use a task to do that for us.
   * Send a command to adb. I use it to clean app data.
 
@@ -67,11 +65,11 @@ android.applicationVariants.all { variant ->
 }
 ```
 
-### Short task type
+### Shortening task type
 
 If you have multiple tasks extending `Cexec`, you can do as follows.
 
-In your `build.gradle` add the import line, before the first task, it can also be on the of the file.
+In your `build.gradle` add the import line, before the first task, it can also be on the top of the file.
 Now yu can put only `Cexec` for the task type.
 
  ```gradle
